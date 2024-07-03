@@ -12,3 +12,4 @@ C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\refi
 C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.pdb
 C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.genruntimeconfig.cache
 C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\ref\FocusTimer.dll
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.sourcelink.json
