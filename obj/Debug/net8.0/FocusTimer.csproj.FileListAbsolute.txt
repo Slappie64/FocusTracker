@@ -1,0 +1,14 @@
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.AssemblyInfoInputs.cache
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.AssemblyInfo.cs
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.csproj.CoreCompileInputs.cache
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\bin\Debug\net8.0\FocusTimer.exe
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\bin\Debug\net8.0\FocusTimer.deps.json
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\bin\Debug\net8.0\FocusTimer.runtimeconfig.json
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\bin\Debug\net8.0\FocusTimer.dll
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\bin\Debug\net8.0\FocusTimer.pdb
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.dll
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\refint\FocusTimer.dll
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.pdb
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\FocusTimer.genruntimeconfig.cache
+C:\Users\Luigi\OneDrive\04-DEVELOPMENT\Projects\FocusTimer\obj\Debug\net8.0\ref\FocusTimer.dll
