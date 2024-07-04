@@ -24,13 +24,14 @@ class UserInterface
                     case "-a":
                     case "-add":
                         Console.WriteLine($"ADD");
-
+                        /*
                         if (arguments.Length == 3)
                             menuAdd(arguments[1], arguments[2]);
                         else if (arguments.Length == 2)
                             menuAdd(arguments[1]);
                         else
                             menuAdd();
+                        */
                         break;
                     
                     case "-l":
@@ -47,7 +48,15 @@ class UserInterface
                     case "-version":
                         Console.WriteLine($"Current Version: {Global.version}");
                         break;
-                    
+
+                    case "-t":
+                    case "-test":
+                        var list = new List<string> { "test1", "test2", "test3" };
+                        var list2 = new List<string> {"Another", "String", "Test"};
+                        Focus.AddFocus(list);
+                        Focus.AddFocus(list2);
+                        Focus.Report();
+                        break;                    
                     default:
                         MenuHelp();
                         break;
@@ -81,6 +90,7 @@ class UserInterface
         Console.WriteLine("");
     }
 
+    /*
     private void menuAdd(string focusTitle, string focusDuration)
     {
         Focus newFocus = new Focus(focusTitle, focusDuration);
@@ -109,32 +119,26 @@ class UserInterface
         Focus newFocus = new Focus(focusTitle, focusDuration);
         newFocus.FocusReport();
     }
+
+    */
 }
 
-class Focus
+static class Focus
 {
-    public string Title;
-    public string Duration;
-    public Focus(string title, string duration)
-    {
-        Title = title;
-        Duration = duration;
-    }
+   static private List<List<string>> focusList = new List<List<string>>();
 
-    public void FocusReport()
-    {
-        Console.WriteLine($"Title: {Title} - Duration: {Duration}");
-    }
+   static public void AddFocus(List<string> focusDetails)
+   {
+        focusList.Add(focusDetails);
+   }
 
-    int DurationConvert(string duration)
-    {
-        return Int32.Parse(duration);
-    }
-
-    string DurationConvert(int duration)
-    {
-        return duration.ToString();
-    }
+   static public void Report()
+   {
+        foreach (List<string> focus in focusList)
+        {
+            Console.WriteLine($"{focus[0]} {focus[1]} {focus[2]}");
+        }
+   }
 }
 
 static class Application

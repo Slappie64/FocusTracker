@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FocusTimer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52956b39b3c596357d4d7be65b0fe29cdcfbd182")]
 [assembly: System.Reflection.AssemblyProductAttribute("FocusTimer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FocusTimer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
