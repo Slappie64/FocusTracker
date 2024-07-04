@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "FocusTimer/1.0.0": {
+        "runtime": {
+          "FocusTimer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FocusTimer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
