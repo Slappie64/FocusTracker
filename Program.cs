@@ -21,27 +21,12 @@ class UserInterface
                         MenuHelp();
                         break;
                     
-                    case "-a":
-                    case "-add":
-                        Console.WriteLine($"ADD");
-                        /*
-                        if (arguments.Length == 3)
-                            menuAdd(arguments[1], arguments[2]);
-                        else if (arguments.Length == 2)
-                            menuAdd(arguments[1]);
+                    case "-f":
+                    case "-focus":
+                        if (arguments.Length != 3)
+                            Focus.FocusStart();
                         else
-                            menuAdd();
-                        */
-                        break;
-                    
-                    case "-l":
-                    case "-list":
-                        Console.WriteLine($"LIST");
-                        break;
-                    
-                    case "-r":
-                    case "-remove":
-                        Console.WriteLine($"REMOVE");
+                            Focus.FocusStart(arguments[1], arguments[2]);
                         break;
 
                     case "-v":
@@ -51,10 +36,6 @@ class UserInterface
 
                     case "-t":
                     case "-test":
-                        var list = new List<string> { "test1", "test2", "test3" };
-                        var list2 = new List<string> {"Another", "String", "Test"};
-                        Focus.AddFocus(list);
-                        Focus.AddFocus(list2);
                         Focus.Report();
                         break;                    
                     default:
@@ -76,69 +57,67 @@ class UserInterface
         Console.WriteLine(@"Options:
             -h,  -help      Show the help page for this application
             -f,  -focus     Start a new focus session
-            -a,  -add       Add a new Task to the tasklist
-            -l,  -list      List all tasks in the tasklist
-            -r,  -remove    Remove a task from the tasklist
             -v,  -version   Show the current application version");
         Console.WriteLine(@"Examples:
             focus-tracker -focus ""example_title"" 10
-            focus-tracker -");
+            focus-tracker -version");
         Console.WriteLine(@"Description:
             The Focus Session Tracker is a command line tool designed to help you track your focus sessions. 
             By specifying a session title and duration, you can start a timer to keep you on track with your tasks. 
             When the session is complete, you will receive a notification.");
         Console.WriteLine("");
     }
-
-    /*
-    private void menuAdd(string focusTitle, string focusDuration)
-    {
-        Focus newFocus = new Focus(focusTitle, focusDuration);
-        newFocus.FocusReport();
-    }
-
-    private void menuAdd(string focusTitle)
-    {
-        Console.WriteLine($"Please specify a duration for this focus.");
-        Console.Write("Focus Duration: ");
-        string focusDuration = Console.ReadLine();
-
-        Focus newFocus = new Focus(focusTitle, focusDuration);
-        newFocus.FocusReport();
-    }
-
-    private void menuAdd()
-    {
-        Console.WriteLine("No parameters passed, please specify a title and a duration.");
-        Console.Write("Focus Title: ");
-        string focusTitle = Console.ReadLine();
-
-        Console.Write("Focus Duration: ");
-        string focusDuration = Console.ReadLine();
-
-        Focus newFocus = new Focus(focusTitle, focusDuration);
-        newFocus.FocusReport();
-    }
-
-    */
 }
 
 static class Focus
 {
-   static private List<List<string>> focusList = new List<List<string>>();
 
-   static public void AddFocus(List<string> focusDetails)
-   {
-        focusList.Add(focusDetails);
-   }
+    static public List<string> loadingIcons = new List<string> {"█     ", "██    ", "███   ", "████  ", "█████ ", "██████", " █████", "  ████", "   ███", "    ██","     █", "      "};
+    static private List<List<string>> focusList = new List<List<string>>();
 
-   static public void Report()
-   {
-        foreach (List<string> focus in focusList)
+    static public void FocusStart()
+    {
+        Console.Write($"Focus Title: ");
+        string? focusTitle = Console.ReadLine();
+
+        Console.Write($"How long do you need to focus for?: ");
+        string? focusDuration = Console.ReadLine();
+
+        if (focusDuration is null)
         {
-            Console.WriteLine($"{focus[0]} {focus[1]} {focus[2]}");
+            Console.WriteLine($"Invalid Duration.");
+            FocusStart();
         }
-   }
+        else
+        {
+            FocusStart(focusTitle, focusDuration);
+        }
+    }
+    static public void FocusStart(string focusTitle, string focusDuration)
+    {
+        Console.Clear();
+        Console.WriteLine($"Focus: {focusTitle}");
+        int timer = 0;
+        int totalDuration = Int32.Parse(focusDuration)*60;
+
+        do
+        {
+            foreach (string icon in loadingIcons)
+            {
+                Console.Write($"\r{icon}{icon}{icon}");
+                Thread.Sleep(1000);
+                timer++;
+            }
+        } while (timer != totalDuration);
+    }
+
+    static public void Report()
+    {
+            foreach (List<string> focus in focusList)
+            {
+                Console.WriteLine($"{focus[0]} {focus[1]} {focus[2]}");
+            }
+    }
 }
 
 static class Application
@@ -155,7 +134,6 @@ static class Application
     static void closeHandler(object sender, ConsoleCancelEventArgs args)
     {
         Console.WriteLine("\nFocus Cancelled");
-        //args.Cancel = true;
+        //args.Cancel = true;    }
     }
-
 }
